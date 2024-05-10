@@ -366,12 +366,7 @@ input:-webkit-autofill:hover {
 .timeline__event {
     margin: 30px 0;
     border-radius: 6px;
-    width: fit-content
-}
-
-.timeline__event:nth-child(odd) .timeline__event__date,
-.timeline__event__content {
-    border-radius: 0 6px 6px 0
+    width: 100%
 }
 
 .timeline__event:nth-child(odd) {
@@ -421,7 +416,7 @@ input:-webkit-autofill:hover {
 .timeline__event__content {
     padding: 20px 20px 0;
     background: #05014a;
-    width: calc(40vw - 84px);
+    width: 100%;
     color: #fff
 }
 
