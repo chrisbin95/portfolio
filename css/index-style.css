@@ -123,7 +123,8 @@ a.nav-link {
 }
 
 section {
-    overflow: hidden
+    overflow: hidden;
+    margin-top: 0.5rem
 }
 
 .card {
@@ -155,7 +156,7 @@ section {
 }
 
 section:not(#cover) {
-    margin-top: 5rem
+    margin-top: 3rem
 }
 
 #about img {
