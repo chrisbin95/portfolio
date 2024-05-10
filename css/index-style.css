@@ -42,6 +42,10 @@ a {
     color: #006aff
 }
 
+a:hover{
+    text-decoration: unset;
+}
+
 html {
     scroll-behavior: smooth
 }
