@@ -17,6 +17,18 @@ label {
     text-decoration: none !important
 }
 
+.timeline__event,
+.timeline__event__icon {
+    display: flex;
+    align-self: center;
+    position: relative
+}
+
+.navbar-brand,
+.timeline,
+.timeline__event {
+    position: relative
+}
 
 #canv {
     height: 100vh
@@ -339,6 +351,105 @@ input:-webkit-autofill:hover {
     color: #dae3e9
 }
 
+.timeline h2 {
+    margin: 5%;
+    font-size: 2rem;
+    font-weight: 100
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto
+}
+
+.timeline__event {
+    margin: 30px 0;
+    border-radius: 6px;
+    width: 60vw
+}
+
+.timeline__event:nth-child(odd) .timeline__event__date,
+.timeline__event__content {
+    border-radius: 0 6px 6px 0
+}
+
+.timeline__event:nth-child(odd) {
+    flex-direction: row-reverse
+}
+
+.timeline__event:nth-child(odd) .timeline__event__content {
+    border-radius: 6px 0 0 6px
+}
+
+.timeline__event:nth-child(odd) .timeline__event__icon:before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: #1832a5;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: auto;
+    z-index: -1;
+    transform: translateX(-50%);
+    -webkit-animation: 2s ease-in-out 2s forwards fillTop;
+    animation: 2s ease-in-out 2s forwards fillTop
+}
+
+.timeline__event:nth-child(odd) .timeline__event__icon:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #40e0d0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    top: 50%;
+    left: auto
+}
+
+.timeline__event__title {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #1ba799;
+    letter-spacing: 1.5px
+}
+
+.timeline__event__content {
+    padding: 20px 20px 0;
+    background: #05014a;
+    width: calc(40vw - 84px);
+    color: #fff
+}
+
+.timeline__event__date {
+    color: #20cab9;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: #555ac0af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 0 20px;
+    border-radius: 6px 0 0 6px
+}
+
+.timeline__event__icon {
+    align-items: center;
+    justify-content: center;
+    color: #1ba799;
+    padding: 40px;
+    margin: 0 20px;
+    background: #2546b3;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px
+}
+
 .count,
 .head {
     text-align: center;
@@ -349,6 +460,94 @@ input:-webkit-autofill:hover {
 .fixed {
     position: fixed !important;
     top: 0 !important
+}
+
+.timeline__event__icon i {
+    font-size: 32px
+}
+
+.timeline__event__icon:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: #40e0d0b2;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-animation: 2s ease-in-out 2s forwards fillTop;
+    animation: 2s ease-in-out 2s forwards fillTop;
+    display: none
+}
+
+.timeline__event__icon:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #13a193de;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    top: 50%
+}
+
+.timeline__event__description {
+    flex-basis: 60%
+}
+
+.timeline__event--type2:after {
+    background: #555ac091
+}
+
+.timeline__event--type2 .timeline__event__date {
+    color: #87bbfe;
+    background: #555ac0af
+}
+
+.timeline__event--type2 .timeline__event__icon:after,
+.timeline__event--type2 .timeline__event__icon:before,
+.timeline__event--type2:nth-child(odd) .timeline__event__icon:after,
+.timeline__event--type2:nth-child(odd) .timeline__event__icon:before {
+    background: #87bbfe
+}
+
+.timeline__event--type2 .timeline__event__icon {
+    background: #87bbfe;
+    color: #555ac0
+}
+
+.timeline__event--type2 .timeline__event__title {
+    color: #555ac0
+}
+
+.timeline__event--type3:after,
+.timeline__event--type3:nth-child(odd) .timeline__event__icon:after,
+.timeline__event--type3:nth-child(odd) .timeline__event__icon:before {
+    background: #fff
+}
+
+.timeline__event--type3 .timeline__event__date {
+    color: #20cab9;
+    background-color: #555ac0af
+}
+
+.timeline__event--type3 .timeline__event__icon {
+    background: #fff;
+    color: #24b47e
+}
+
+.timeline__event--type3 .timeline__event__icon:after,
+.timeline__event--type3 .timeline__event__icon:before {
+    background: #aff1b6
+}
+
+.timeline__event--type3 .timeline__event__title {
+    color: #24b47e
+}
+
+.timeline__event:last-child .timeline__event__icon:before {
+    content: none
 }
 
 .head {
@@ -417,6 +616,41 @@ input:-webkit-autofill:hover {
     max-width: 70px
 }
 
+@media (max-width:786px) {
+    .timeline__event {
+        flex-direction: column;
+        align-self: center
+    }
+    .timeline__event__content {
+        width: 100%
+    }
+    .timeline__event__icon {
+        border-radius: 6px 6px 0 0;
+        width: 100%;
+        margin: 0;
+        box-shadow: none
+    }
+    .timeline__event:nth-child(odd) .timeline__event__date,
+    .timeline__event__date {
+        border-radius: 0;
+        padding: 20px
+    }
+    .timeline__event__icon:after,
+    .timeline__event__icon:before {
+        display: none
+    }
+    .timeline__event:nth-child(odd) {
+        flex-direction: column;
+        align-self: center
+    }
+    .timeline__event:nth-child(odd) .timeline__event__icon {
+        border-radius: 6px 6px 0 0;
+        margin: 0
+    }
+    .timeline__event {
+        width: 100%
+    }
+}
 
 #unc-logo {
     width: 50px
