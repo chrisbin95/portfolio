@@ -49,11 +49,5 @@
   }
 }
 @media (max-width: 400px) {
-  .navbar-brand,.timeline,.timeline__event{display: none;}
-}
-.timeline-edu{
-    display: flex;
-    flex-direction: column;
-    margin: 30px auto;
-    position: relative;
+  .navbar-text{display: none;}
 }
